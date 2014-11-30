@@ -1,25 +1,174 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="UZ0-g2-Sj7"/>
+                        <viewControllerLayoutGuide type="bottom" id="swu-5v-Z3K"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWQ-10-vIj">
+                                <rect key="frame" x="16" y="0.0" width="288" height="480"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aox-18-yJN">
+                                        <rect key="frame" x="8" y="0.0" width="329" height="659"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEe-C6-goA">
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N1S-0f-7bS">
+                                                <rect key="frame" x="36" y="254" width="51" height="31"/>
+                                            </switch>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NhM-oj-jsD">
+                                                <rect key="frame" x="6" y="191" width="118" height="31"/>
+                                                <connections>
+                                                    <action selector="changeSlider:" destination="vXZ-lx-hvc" eventType="valueChanged" id="SNY-Ev-mpG"/>
+                                                </connections>
+                                            </slider>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ur-XS-9zQ">
+                                                <rect key="frame" x="116" y="18" width="199" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvT-kd-nAy">
+                                                <rect key="frame" x="8" y="18" width="35" height="30"/>
+                                                <state key="normal" title="Click">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="handleButtonClick" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ztg-0h-leU"/>
+                                                </connections>
+                                            </button>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JFx-G4-BNh">
+                                                <rect key="frame" x="8" y="73" width="105" height="29"/>
+                                                <segments>
+                                                    <segment title="1"/>
+                                                    <segment title="2"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="segmentcontroller" destination="vXZ-lx-hvc" eventType="valueChanged" id="a5f-ma-7RG"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 or 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yb8-qb-J5W">
+                                                <rect key="frame" x="219" y="76" width="45" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xO8-ed-L4s">
+                                                <rect key="frame" x="8" y="135" width="97" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udy-YM-MU3">
+                                                <rect key="frame" x="219" y="138" width="102" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8z-ve-RVg">
+                                                <rect key="frame" x="46" y="322" width="39" height="30"/>
+                                                <state key="normal" title="Click ">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showIndecator" destination="vXZ-lx-hvc" eventType="touchUpInside" id="glW-sc-cw6"/>
+                                                </connections>
+                                            </button>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3sl-Gi-Ze3">
+                                                <rect key="frame" x="241" y="322" width="20" height="20"/>
+                                            </activityIndicatorView>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="JVF-GU-qWh">
+                                                <rect key="frame" x="18" y="382" width="94" height="29"/>
+                                                <connections>
+                                                    <action selector="stepperValue:" destination="vXZ-lx-hvc" eventType="valueChanged" id="J50-Ia-wmf"/>
+                                                </connections>
+                                            </stepper>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuN-xK-Ltq">
+                                                <rect key="frame" x="113" y="122" width="111" height="55"/>
+                                                <state key="normal" title="Press me  baby">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showText" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Zzb-vN-lQ4"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hlm-xj-3IF">
+                                                <rect key="frame" x="167" y="381" width="97" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsQ-8J-hEn">
+                                                <rect key="frame" x="219" y="200" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="659" id="5A8-6j-XwK"/>
+                                            <constraint firstAttribute="width" constant="329" id="zqL-kd-ASd"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Aox-18-yJN" secondAttribute="bottom" id="F2y-F0-Icj"/>
+                                    <constraint firstAttribute="trailing" secondItem="Aox-18-yJN" secondAttribute="trailing" constant="-41" id="YBf-Pe-Z4c"/>
+                                    <constraint firstItem="Aox-18-yJN" firstAttribute="top" secondItem="sWQ-10-vIj" secondAttribute="top" id="sZQ-yG-Mqz"/>
+                                    <constraint firstItem="Aox-18-yJN" firstAttribute="leading" secondItem="sWQ-10-vIj" secondAttribute="leading" id="uZ4-4l-NBY"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="swu-5v-Z3K" firstAttribute="top" secondItem="sWQ-10-vIj" secondAttribute="bottom" id="DLE-WA-IOW"/>
+                            <constraint firstItem="sWQ-10-vIj" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="gbu-dB-gls"/>
+                            <constraint firstItem="sWQ-10-vIj" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="osl-bZ-qC2"/>
+                            <constraint firstItem="sWQ-10-vIj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="rsq-P7-Sea"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="myButoonForText" destination="Aox-18-yJN" id="aPD-vD-S9k"/>
+                        <outlet property="myButton" destination="AvT-kd-nAy" id="uVx-Lv-fo6"/>
+                        <outlet property="myButtonForShowIndecator" destination="F8z-ve-RVg" id="c8N-IO-zee"/>
+                        <outlet property="myIndicator" destination="3sl-Gi-Ze3" id="uB6-49-sQ4"/>
+                        <outlet property="myLabel" destination="Yb8-qb-J5W" id="xXx-r4-tMs"/>
+                        <outlet property="myLabelForSlider" destination="QsQ-8J-hEn" id="vul-ju-5KC"/>
+                        <outlet property="myLabelForStepper" destination="Aox-18-yJN" id="BWS-Uk-hDq"/>
+                        <outlet property="myLabelForText" destination="udy-YM-MU3" id="vzg-Lj-L8Q"/>
+                        <outlet property="myLabelWithChangedFromButton" destination="5ur-XS-9zQ" id="hIA-J6-IfO"/>
+                        <outlet property="myScroll" destination="sWQ-10-vIj" id="ucV-68-w5f"/>
+                        <outlet property="mySegmentedControll" destination="JFx-G4-BNh" id="DpR-Go-OTv"/>
+                        <outlet property="mySlider" destination="Aox-18-yJN" id="gkC-B8-EvG"/>
+                        <outlet property="myStepper" destination="Aox-18-yJN" id="FmV-Fy-QNN"/>
+                        <outlet property="mySwitch" destination="N1S-0f-7bS" id="Vqm-c7-jqo"/>
+                        <outlet property="myTextField" destination="xO8-ed-L4s" id="kxN-H2-xSb"/>
+                        <outlet property="myTextForStepper" destination="hlm-xj-3IF" id="9vp-EY-sOc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-29" y="-437"/>
         </scene>
     </scenes>
 </document>
